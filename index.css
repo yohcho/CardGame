@@ -1,0 +1,181 @@
+html, body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-image: url("images/playTable.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width:100%;
+  height:auto;
+}
+
+#new-game {  
+  background-color: rgba(255,255,255,0.5);
+  width: 30%;
+  margin: 0 auto;
+  padding: 30px 30px 50px 30px;
+  height: auto;
+  position: relative;
+  top: 30%;
+}
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+#hand {
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#field {
+    position: absolute;
+    top: 5%;
+    height: 60%;
+    width: 100%;
+}
+
+.cardHold {
+    margin: 10px 0px;
+    height:auto;
+    width:auto;    
+}
+
+#slice1 {
+    width: 100%;
+    height: 33.33%;
+    display: flex;
+}
+
+#playedCard1 {
+    height: 100%;
+    width:6%;
+    opacity: 0;
+    margin-left:47%
+}
+
+#scoreboard{
+    height: 100%;
+    width: 10%;
+    margin-left: 35%;
+}
+
+table, th, td {
+    background-color: white;
+    border:1px solid black;
+}
+
+.scores {
+    height:10px
+}
+
+#slice2 {
+    width: 100%;
+    height: 33.33%;
+    top:33.33%;
+    display: flex;
+}
+#playedCard2 {
+    height: 100%;
+    width: 6%;
+    margin-left: 40%;
+    opacity: 0
+}
+
+#nextRnd{
+    display: none;
+    height:10%;
+    top: 45%;
+    left: 47%;
+    position: absolute;
+    
+}
+
+#playedCard3 {
+    height: 100%;
+    width: 6%;
+    margin-left: 8%;
+    opacity: 0
+}
+
+#slice3 {
+    width: 100%;
+    height: 33.33%;
+    top:66.67%;
+}
+
+#playedCard4 {
+    height: 100%;
+    width:6%;
+    margin: 0 auto;
+    opacity: 0
+}
+
+.card{
+    height:100%;
+}
+
+.cardHold:hover{
+    box-shadow: 0.5px 0.5px 7.5px 7.5px white;
+}
+
+#input-field {
+    margin-right: 0px;
+    height: 40px;   
+}
+
+#begin-btn{
+    margin-left: 10px;
+    height:45px;
+    width: 45px;
+    border-radius: 22.5px;
+}
+
+#gameboard{
+    display: none;
+}
+
+#game-over{
+    display: none;
+    background-color: cyan;
+    width: 60%;
+    padding: 30px 30px 150px 30px;
+    height: 50%;
+    position: absolute;
+    top: 15%;
+    left:20%;
+    z-index: 100;
+}
+
+h2 {
+    margin:0 auto 0 auto;
+    font-size: 60px;
+    border: solid;
+    width: 80%;
+    border-width: 5px;
+}
+
+#status {
+    margin-top: 40px;
+    font-size: 158px;
+}
+
+h1 {
+    font-size: 50px
+}
+
+button {
+    cursor: pointer;
+}
