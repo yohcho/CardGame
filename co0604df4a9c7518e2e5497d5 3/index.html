@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="overlay">
+            <div id="new-game">
+                <h1>New Game</h1>
+                <input id = "input-field" placeholder="Enter your name">
+                <button id="begin-btn">-></button>
+            </div>
+            <div id="game-over">
+                <h2>GAME OVER!</h2>
+                <h1 id="status"></h1>
+                <p>press enter to play again</p>
+            </div>
+        </div>
+        <div id = "gameboard">
+            <div id="field">
+                <div id = slice1>
+                    <div id="playedCard1" class="played"></div>
+                    <div id = "scoreboard">
+                        <table style="width:100%">
+                            <tr>
+                                <td id="teamName">Team </td>
+                                <td>Opponent</td>
+                            </tr>
+                            <tr class="scores">
+                                <td id = "playerTeam">0</td>
+                                <td id = "opponentTeam">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id = slice2>
+                    <div id="playedCard2" class="played"></div>
+                    <button id="nextRnd">Next round</button>
+                    <div id="playedCard3" class="played"></div>
+                </div>
+                <div id = slice3>
+                    <div id="playedCard4" class="played"></div>
+                </div>
+            </div>
+            <div id = "hand">
+                <div class="cardHold" onclick="selectCard(this)"></div>
+                <div class="cardHold" onclick="selectCard(this)"></div>
+                <div class="cardHold" onclick="selectCard(this)"></div>
+                <div class="cardHold" onclick="selectCard(this)"></div>
+                <div class="cardHold" onclick="selectCard(this)"></div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
