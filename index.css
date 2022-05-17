@@ -96,11 +96,12 @@ table, th, td {
 
 #nextRnd{
     display: none;
-    height:10%;
-    top: 45%;
-    left: 47%;
+    height:30%;
+    width: 5%;
     position: absolute;
-    
+    left: 50%;
+    transform: translateX(-50%);
+    top:35%;
 }
 
 #playedCard3 {
@@ -149,10 +150,10 @@ table, th, td {
 
 #game-over{
     display: none;
-    background-color: cyan;
+    background-color: rgba(255,255,255,0.4);
     width: 60%;
     padding: 30px 30px 150px 30px;
-    height: 50%;
+    height: 40%;
     position: absolute;
     top: 15%;
     left:20%;
@@ -161,7 +162,7 @@ table, th, td {
 
 h2 {
     margin:0 auto 0 auto;
-    font-size: 60px;
+    font-size: 50px;
     border: solid;
     width: 80%;
     border-width: 5px;
@@ -169,7 +170,7 @@ h2 {
 
 #status {
     margin-top: 40px;
-    font-size: 158px;
+    font-size: 133px;
 }
 
 h1 {
@@ -178,4 +179,8 @@ h1 {
 
 button {
     cursor: pointer;
+}
+
+p {
+    margin-top: 5%;
 }
