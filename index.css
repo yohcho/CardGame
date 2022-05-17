@@ -168,6 +168,7 @@ table, th, td {
     height: 3.5vw;
     width: 3.5vw;
     border-radius: 1.75vw;
+    font-size: 1.5vw;
 }
 
 #gameboard{
