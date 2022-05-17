@@ -6,7 +6,7 @@ html, body {
   background-size: cover;
   background-repeat: no-repeat;
   width:100%;
-  height:auto;
+  height:100%;
 }
 
 ul {
@@ -24,7 +24,7 @@ li {
     background-color: rgba(255,255,255,0.5);
     width: 90%;
     margin: 0 auto;
-    padding: 30px 30px 50px 30px;
+    padding: 0.1vw 1vw 6vw 1vw;
     height: 70%;
     position: relative;
     top:50%;
@@ -33,9 +33,9 @@ li {
 
 #new-game {  
   background-color: rgba(255,255,255,0.5);
-  width: 30%;
+  width: 50%;
   margin: 0 auto;
-  padding: 30px 30px 50px 30px;
+  padding: 2.5vw 1vw 4vw 1vw;
   height: auto;
   position: relative;
   top: 30%;
@@ -70,7 +70,7 @@ li {
 }
 
 .cardHold {
-    margin: 10px 0px;
+    margin: 0.5vw 0vw;
     height:auto;
     width:auto;    
 }
@@ -89,18 +89,20 @@ li {
 }
 
 #scoreboard{
-    height: 100%;
-    width: 10%;
-    margin-left: 35%;
+    position: absolute;
+    max-width: 15%;
+    top: 4%;
+    right: 4%;
+    display: none;
 }
 
 table, th, td {
     background-color: white;
-    border:1px solid black;
+    border: 0.1vw solid black;
 }
 
 .scores {
-    height:10px
+    height:2vw
 }
 
 #slice2 {
@@ -112,25 +114,25 @@ table, th, td {
 #playedCard2 {
     height: 100%;
     width: 6%;
-    margin-left: 40%;
+    margin-left: 39%;
     opacity: 0
 }
 
 #nextRnd{
+    z-index: 1000;
     display: none;
-    height:30%;
+    height:15%;
     width: 5%;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top:35%;
+    top: 28%;
+    left:48.3%;
     font-size:1.5vw;
 }
 
 #playedCard3 {
     height: 100%;
     width: 6%;
-    margin-left: 8%;
+    margin-left: 10%;
     opacity: 0
 }
 
@@ -152,19 +154,20 @@ table, th, td {
 }
 
 .cardHold:hover{
-    box-shadow: 0.5px 0.5px 7.5px 7.5px white;
+    box-shadow: 0.1vw 0.1vw 1vw 1vw white;
 }
 
 #input-field {
-    margin-right: 0px;
-    height: 40px;   
+    padding-left: 0.8vw;
+    height: 3vw;
+    width: 16vw;
 }
 
 #begin-btn{
-    margin-left: 10px;
-    height:45px;
-    width: 45px;
-    border-radius: 22.5px;
+    margin-left: 1vw;
+    height: 3.5vw;
+    width: 3.5vw;
+    border-radius: 1.75vw;
 }
 
 #gameboard{
@@ -175,7 +178,7 @@ table, th, td {
     display: none;
     background-color: rgba(255,255,255,0.4);
     width: 60%;
-    padding: 30px 30px 150px 30px;
+    padding: 3vw 3vw 10vw 3vw;
     height: 40%;
     position: absolute;
     top: 15%;
@@ -210,11 +213,10 @@ h2 {
     font-size: 5vw;
     border: solid;
     width: 80%;
-    border-width: 5px;
 }
 
 #status {
-    margin-top: 40px;
+    margin-top: 2vw;
     font-size: 10vw;
 }
 
