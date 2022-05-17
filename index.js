@@ -3,7 +3,7 @@ const startEl = document.querySelector("#begin-btn")
 const popupEl = document.querySelector("#new-game")
 const inputEl = document.querySelector("#input-field")
 const gameboardEl = document.querySelector("#gameboard")
-const handEl = document.getElementsByClassName("cardHold")
+const hand = document.querySelector("#hand")
 const playerPlayed = document.querySelector("#playedCard4")
 const allPlayed = document.getElementsByClassName("played")
 const teamName = document.querySelector("#teamName")
@@ -82,9 +82,15 @@ function trick(){
 }
 
 function renderCards(){
-    for (let index = 0; index<handEl.length; index++){
-        handEl[index].innerHTML = `<img class="card" src = images/cards/${currentHand[index]}>`
+    let cardsRender = ""
+    for (let index = 0; index<currentHand.length; index++){
+        cardsRender += `
+        <div class="cardHold" onclick="selectCard(this)">
+            <img class="card" src = images/cards/${currentHand[index]}>
+        </div>
+        `
     }
+    hand.innerHTML = cardsRender
 }
 
 function dealCards(){
@@ -118,10 +124,10 @@ function selectCard(card){
     {
         playerPlayed.innerHTML=card.innerHTML
         playerPlayed.style.opacity = 1
-        let currCard = card.innerHTML.slice(0,card.innerHTML.length-2).substr(36)
-        card.innerHTML = "";
+        let currCard = card.innerHTML.slice(49,-11)
         currentPlayed.push(currCard)
         playerSelected = true
+        card.remove()
         if(playerFirst)
         {
             let botOnePlay = botPlay(botHands[0])
