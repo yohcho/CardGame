@@ -17,8 +17,8 @@ const overMessage = document.querySelector("#status")
 const allCards = new Map()
 const faceToVal = new Map()
 const suits = ["diamonds","clubs","hearts","spades"]
-//const ranks = ["ace","king","queen","jack",10,9,8,7,6,5,4,3,2,1]
-const ranks = ["ace","king","queen","jack",10,9]
+const ranks = ["ace","king","queen","jack",10,9,8,7,6,5,4,3,2]
+//const ranks = ["ace","king","queen","jack",10,9]
 
 let playerFirst = false;
 let currDeck = []
@@ -88,6 +88,8 @@ function renderCards(){
 }
 
 function dealCards(){
+    currentHand = []
+    botHands = [[],[],[]]
     for(let count = 0; count<3; count++){
         for(let counter = 0; counter<5; counter++){
             let cardIndex = Math.floor(Math.random()*currDeck.length)
@@ -120,7 +122,6 @@ function selectCard(card){
         card.innerHTML = "";
         currentPlayed.push(currCard)
         playerSelected = true
-        finishTrick()
         if(playerFirst)
         {
             let botOnePlay = botPlay(botHands[0])
@@ -128,6 +129,7 @@ function selectCard(card){
             document.getElementById("playedCard3").innerHTML = `<img class="card" src = images/cards/${botOnePlay}>`
             document.getElementById("playedCard3").style.opacity = 1
         }
+        finishTrick()
     }
 }
 
