@@ -16,6 +16,7 @@ const rulesOpenBtn = document.querySelector("#open-rules")
 const rulesCloseBtn = document.querySelector("#close-rules")
 const rules = document.querySelector("#rules")
 const newGame = document.querySelector("#new-game")
+const scoreboard = document.querySelector("#scoreboard")
 
 //global variables
 const allCards = new Map()
@@ -65,6 +66,7 @@ inputEl.addEventListener("keypress",function(event){
 })
 
 startEl.addEventListener("click", function(){
+    scoreboard.style.display = "block"
     teamName.innerHTML += inputEl.value
     popupEl.style.display = "none"
     gameboardEl.style.display = "block"
@@ -83,20 +85,21 @@ function playGame(){
 
 function trick(){
     playerSelected = false
-    currentPlayed = []
+    currentPlayed = [0,0,0,0]
     for(const playedCard of allPlayed){
         playedCard.style.opacity = 0;
     }
     if(!playerFirst)
     {
         let botOnePlay = botPlay(botHands[0])
-        currentPlayed.push(botOnePlay)
+        currentPlayed[0] = botOnePlay
         document.getElementById("playedCard3").innerHTML = `<img class="card" src = images/cards/${botOnePlay}>`
         document.getElementById("playedCard3").style.opacity = 1
     }
 }
 
 function renderCards(){
+    hand.style.opacity = 1
     let cardsRender = ""
     for (let index = 0; index<currentHand.length; index++){
         cardsRender += `
@@ -140,13 +143,13 @@ function selectCard(card){
         playerPlayed.innerHTML=card.innerHTML
         playerPlayed.style.opacity = 1
         let currCard = card.innerHTML.slice(49,-11)
-        currentPlayed.push(currCard)
+        currentPlayed[1]=currCard
         playerSelected = true
         card.remove()
         if(playerFirst)
         {
             let botOnePlay = botPlay(botHands[0])
-            currentPlayed.push(botOnePlay)
+            currentPlayed[0]=botOnePlay
             document.getElementById("playedCard3").innerHTML = `<img class="card" src = images/cards/${botOnePlay}>`
             document.getElementById("playedCard3").style.opacity = 1
         }
@@ -156,11 +159,11 @@ function selectCard(card){
 
 function finishTrick(){
     let botTwoPlay = botPlay(botHands[1])
-    currentPlayed.push(botTwoPlay)
+    currentPlayed[2]=botTwoPlay
     document.getElementById("playedCard2").innerHTML = `<img class="card" src = images/cards/${botTwoPlay}>`
     document.getElementById("playedCard2").style.opacity = 1
     let botThreePlay = botPlay(botHands[2])
-    currentPlayed.push(botThreePlay)
+    currentPlayed[3] = botThreePlay
     document.getElementById("playedCard1").innerHTML = `<img class="card" src = images/cards/${botThreePlay}>`
     document.getElementById("playedCard1").style.opacity = 1
     determineWinner()
@@ -180,14 +183,16 @@ function determineWinner(){
     }
     const team1 = rankVals[0]+rankVals[2]
     const team2 = rankVals[1]+rankVals[3]
-    playerTeamScore.innerHTML = parseInt(playerTeamScore.innerHTML)+team2
-    opponentTeamScore.innerHTML = parseInt(opponentTeamScore.innerHTML)+team1
-    
-
+    if(team1>team2)
+        opponentTeamScore.innerHTML = parseInt(opponentTeamScore.innerHTML)+1
+    if(team2>team1)
+        playerTeamScore.innerHTML = parseInt(playerTeamScore.innerHTML)+1
+        
     if(botHands[0].length>0)
         nextRnd.style.display = "block";
     else{
         gameOverEl.style.display = "block"
+        hand.style.opacity = 0
         if (parseInt(playerTeamScore.innerHTML)>parseInt(opponentTeamScore.innerHTML))
         {
             overMessage.innerHTML = "YOU WIN!"
