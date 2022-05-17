@@ -7,6 +7,7 @@
     <body>
         <div id="overlay">
             <div id="new-game">
+                <button id = "open-rules">📜</button>
                 <h1>New Game</h1>
                 <input id = "input-field" placeholder="Enter your name">
                 <button id="begin-btn">-></button>
@@ -15,6 +16,24 @@
                 <h2>GAME OVER!</h2>
                 <h1 id="status"></h1>
                 <p>press enter to play again</p>
+            </div>
+            <div id = "rules">
+                <button id = "close-rules">❌</button>
+                <h1>Rules</h1>
+                <ul>
+                    <li>There are two teams comprising of players sitting opposite of each other</li>
+                    <li>Each player is dealt 5 cards to begin the game</li>
+                    <li>Every round, each player plays a card and at the end the team with the higher sum in card rank wins</li>
+                    <li>Special cases:
+                        <ul>
+                            <li>King = 10</li>
+                            <li>Queen = 10</li>
+                            <li>Jack = 10</li>
+                            <li>Ace = 11</li>
+                        </ul>
+                    </li>
+                    <li>The team with most points after five rounds win the game</li>
+                </ul>
             </div>
         </div>
         <div id = "gameboard">
