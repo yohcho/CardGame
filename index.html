@@ -6,6 +6,18 @@
     </head>
     <body>
         <div id="overlay">
+            <div id = "scoreboard">
+                <table style="width:100%">
+                    <tr>
+                        <td id="teamName">Team </td>
+                        <td>Opponent</td>
+                    </tr>
+                    <tr class="scores">
+                        <td id = "playerTeam">0</td>
+                        <td id = "opponentTeam">0</td>
+                    </tr>
+                </table>
+            </div>
             <div id="new-game">
                 <button id = "open-rules">📜</button>
                 <h1>New Game</h1>
@@ -37,25 +49,13 @@
             </div>
         </div>
         <div id = "gameboard">
+            <button id="nextRnd">Next round</button>
             <div id="field">
                 <div id = slice1>
                     <div id="playedCard1" class="played"></div>
-                    <div id = "scoreboard">
-                        <table style="width:100%">
-                            <tr>
-                                <td id="teamName">Team </td>
-                                <td>Opponent</td>
-                            </tr>
-                            <tr class="scores">
-                                <td id = "playerTeam">0</td>
-                                <td id = "opponentTeam">0</td>
-                            </tr>
-                        </table>
-                    </div>
                 </div>
                 <div id = slice2>
                     <div id="playedCard2" class="played"></div>
-                    <button id="nextRnd">Next round</button>
                     <div id="playedCard3" class="played"></div>
                 </div>
                 <div id = slice3>
