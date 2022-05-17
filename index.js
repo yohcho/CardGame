@@ -12,6 +12,10 @@ const opponentTeamScore = document.querySelector("#opponentTeam")
 const nextRnd = document.querySelector("#nextRnd")
 const gameOverEl = document.querySelector("#game-over")
 const overMessage = document.querySelector("#status")
+const rulesOpenBtn = document.querySelector("#open-rules")
+const rulesCloseBtn = document.querySelector("#close-rules")
+const rules = document.querySelector("#rules")
+const newGame = document.querySelector("#new-game")
 
 //global variables
 const allCards = new Map()
@@ -42,6 +46,17 @@ faceToVal.set("queen",10)
 faceToVal.set("jack",10)
 
 //main.exe
+
+rulesOpenBtn.addEventListener("click", function() {
+    rules.style.display = "block"
+    newGame.style.display = "none"
+})
+
+rulesCloseBtn.addEventListener("click", function() {
+    rules.style.display = "none"
+    newGame.style.display = "block"
+})
+
 inputEl.addEventListener("keypress",function(event){
     if (event.key === "Enter") {
     event.preventDefault();
