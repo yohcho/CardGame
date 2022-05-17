@@ -9,6 +9,27 @@ html, body {
   height:auto;
 }
 
+ul {
+    margin-top: 0.5%;
+}
+li {
+    text-align: left;
+    margin-bottom:1%;
+}
+
+#rules {
+    display: none;
+    z-index: 200;
+    background-color: rgba(255,255,255,0.5);
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 30px 50px 30px;
+    height: 70%;
+    position: relative;
+    top:50%;
+    transform: translateY(-50%)
+}
+
 #new-game {  
   background-color: rgba(255,255,255,0.5);
   width: 30%;
@@ -102,6 +123,7 @@ table, th, td {
     left: 50%;
     transform: translateX(-50%);
     top:35%;
+    font-size:1.5vw;
 }
 
 #playedCard3 {
@@ -160,9 +182,31 @@ table, th, td {
     z-index: 100;
 }
 
+#open-rules {
+    background-color: rgba(255,255,255,0);
+    font-size:3vw;
+    position: absolute;
+    top: 4%;
+    right: 3%;
+    width: 4vw;
+    height: 4vw;
+    border: none;
+}
+
+#close-rules {
+    background-color: rgba(255,255,255,0);
+    font-size:2vw;
+    position: absolute;
+    top: 4%;
+    right: 3%;
+    width: 4vw;
+    height: 4vw;
+    border: none;
+}
+
 h2 {
     margin:0 auto 0 auto;
-    font-size: 50px;
+    font-size: 5vw;
     border: solid;
     width: 80%;
     border-width: 5px;
@@ -170,11 +214,13 @@ h2 {
 
 #status {
     margin-top: 40px;
-    font-size: 133px;
+    font-size: 10vw;
 }
 
 h1 {
-    font-size: 50px
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: 4.5vw
 }
 
 button {
@@ -183,4 +229,5 @@ button {
 
 p {
     margin-top: 5%;
+    font-size: 1.5vw;
 }
