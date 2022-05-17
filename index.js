@@ -23,7 +23,6 @@ const allCards = new Map()
 const faceToVal = new Map()
 const suits = ["diamonds","clubs","hearts","spades"]
 const ranks = ["ace","king","queen","jack",10,9,8,7,6,5,4,3,2]
-//const ranks = ["ace","king","queen","jack",10,9]
 
 let playerFirst = false;
 let currDeck = []
@@ -67,7 +66,10 @@ inputEl.addEventListener("keypress",function(event){
 
 startEl.addEventListener("click", function(){
     scoreboard.style.display = "block"
-    teamName.innerHTML += inputEl.value
+    if(inputEl.value != "")
+        teamName.innerHTML += inputEl.value
+    else
+        teamName.innerHTML += "Player"
     popupEl.style.display = "none"
     gameboardEl.style.display = "block"
     playGame()
