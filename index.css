@@ -210,6 +210,10 @@ table, th, td {
     border: none;
 }
 
+#open-rules:hover, #close-rules:hover {
+    text-shadow: 0.1vw 0.1vw 0.5vw white;
+}
+
 h2 {
     margin:0 auto 0 auto;
     font-size: 5vw;
